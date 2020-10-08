@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133163357-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-133163357-1');
+    </script>
+    <title>About | Ben Basten</title>
+    <link rel="icon" href="img/icons/icon.png">
+    <script src="js/main.js"></script>
+    <meta name="description" content="Learn more about Ben Basten and his work.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="css/navigation-general.css" />
+
+</head>
+
+<body onload="moveElements()" onresize="moveElements()">
+    <div class="content">
+        <ul class="navigation" id="navBar">
+            <li>
+                <a id="hamburger" href="javascript:void(0)" onclick="openMenu()">
+                    <img src="img/icons/hamburger.png" alt="hamburger"
+                         id="burgerIcon">
+                </a>
+            </li>
+            <li class="logo">
+                <a class="logo" href="/">
+                    <img src="img/icons/logo-small.png" alt="logo" onmouseover="highlightIcon(3)"
+                         onmouseout="flattenIcon()" id="personalLogo">
+                </a>
+            </li>
+            <li class="navigation"><a class="navigation" href="/photo">Photo</a></li>
+            <li class="navigation"><a class="navigation" href="/video">Video</a></li>
+            <li class="navigation"><a class="navigation active" href="/about">About</a></li>
+            <li class="navigation"><a class="navigation" href="/contact">Contact</a></li>
+            <li class="social">
+                <a class="social" href="http://instagram.com/ben.basten2" target="_blank">
+                    <img src="img/icons/instagram-small.png"
+                         alt="Instagram: ben.basten2" onmouseover="highlightIcon(1)" onmouseout="flattenIcon()" id="insta">
+                </a>
+            </li>
+            <li class="social">
+                <a class="social" href="https://www.youtube.com/channel/UC4QJKs4omKo_cDSVvPC1nEA" target="_blank">
+                    <img src="img/icons/youtube-small.png" alt="Youtube: Ben Basten" onmouseover="highlightIcon(2)"
+                         onmouseout="flattenIcon()" id="youtube">
+                </a>
+            </li>
+            <li class="social">
+                <a class="social" href="https://github.com/ben-basten" target="_blank">
+                    <img src="img/icons/github-small.png" alt="GitHub" onmouseover="highlightIcon(5)"
+                         onmouseout="flattenIcon()" id="github">
+                </a>
+            </li>
+        </ul>
+        <div class="wide beige card right mobileReveal">
+            <h1 class="head">About</h1>
+        </div>
+        <div id="empty"></div>
+        <div class="wide beige card right">
+            <h1 class="mobileRemove head">About</h1>
+            <p>
+                I am currently a student studying computer science. Although I have a variety of software development interests, most of my experience centers around web
+                design. I designed and coded this website from the ground up, and it serves as a sandbox for me to experiment with different web development practices.
+                The website is currently using Node.js Express as a lightweight framework and technologies such as HTML, CSS, JavaScript, and jQuery. I am currently working to 
+                move the page to a more robust framework, more specifically .NET MVC. Software development intrigues me for the same reason that I enjoy photography - 
+                there's creativity that goes into developing a new solution for a problem.<br><br>
+                Photography and videography are both hobbies that I like to pursue in my free time. I am often outside exploring everything that the Upper Peninsula has to offer,
+                and I often take my camera along with me. Some of my shooting is done with film - there's something awesome about being thoughtful about a photo composition and 
+                not heavily processing it with tools like Photoshop. I usually can be found shooting landscapes, but I also love taking portraits. My photography is all about 
+                capturing those little moments in life. As far as video, my works cover everything from juggling to simple B-roll to short films. I have fun with it. Check out some 
+                of my <a href="/video">videography</a> and <a href="/photo">photography</a>!
+            </p>
+        </div>
+        <div id="swap">
+            <div class="beige card skinny">
+                <img src="img/nmu-portrait.jpg" alt="portrait">
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div id="footer">
+        <div class="column" style="border-right: 1px solid white;">
+            <h3>My Work</h3>
+            <ul>
+                <li><a href="/photo">Photos</a></li>
+                <li><a href="/video">Videos</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>About Me</h3>
+            <ul>
+                <li><a href="/about">Bio</a></li>
+                <li><a href="/myyear2018">My Year 2018</a></li>
+            </ul>
+        </div>
+        <div class="column" id="lastColumn">
+            <h3 class="mobileRemove">Get in touch</h3>
+            <ul>
+                <li><a href="/contact">Contact Form </a><span class="mobile"> • </span></li>
+                <li class="footer-social"><a href="https://instagram.com/ben.basten2" alt="Instagram: Ben Basten"
+                        target="_blank"><img src="img/icons/instagram-small-grey.png" alt="instagram"></a> </a><span
+                        class="mobile">•</span> <a href="https://www.youtube.com/channel/UC4QJKs4omKo_cDSVvPC1nEA" alt="YouTube: Ben Basten"
+                        target="_blank"><img src="img/icons/youtube-small-grey.png" alt="youtube"></a></li>
+            </ul>
+        </div>
+        <p class="inline" id="credit">Website design by Ben Basten</p>
+    </div>
+</body>
+
+</html>

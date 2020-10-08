@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133163357-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-133163357-1');
+    </script>
+    <title>Resume | Ben Basten</title>
+    <script src="js/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icons/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="css/navigation-general.css" />
+</head>
+
+<body onload="moveElements()" onresize="moveElements()">
+    <div class="content">
+        <ul class="navigation" id="navBar">
+            <li>
+                <a id="hamburger" href="javascript:void(0)" onclick="openMenu()">
+                    <img src="img/icons/hamburger.png" alt="hamburger" id="burgerIcon">
+                </a>
+            </li>
+            <li class="logo">
+                <a class="logo" href="/">
+                    <img src="img/icons/logo-small.png" alt="logo" onmouseover="highlightIcon(3)"
+                        onmouseout="flattenIcon()" id="personalLogo">
+                </a>
+            </li>
+            <li class="navigation"><a class="navigation" href="/photo">Photo</a></li>
+            <li class="navigation"><a class="navigation" href="/video">Video</a></li>
+            <li class="navigation"><a class="navigation" href="/about">About</a></li>
+            <li class="navigation"><a class="navigation" href="/contact">Contact</a></li>
+            <li class="social">
+                <a class="social" href="https://github.com/ben-basten" target="_blank">
+                    <img src="img/icons/github-small.png" alt="GitHub" onmouseover="highlightIcon(5)"
+                         onmouseout="flattenIcon()" id="github">
+                </a>
+            </li>
+            <li class="social">
+                <a class="social" href="https://www.linkedin.com/in/ben-basten-8a1213158" target="_blank">
+                    <img src="img/icons/linkedin-small.png" alt="LinkedIn" onmouseover="highlightIcon(4)"
+                        onmouseout="flattenIcon()" id="linkedin">
+                </a>
+            </li>
+        </ul>
+        <div id="empty" style="text-align: center"></div>
+        <div class="beige card wide right">
+            <h2>Objective</h2>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, vitae quaerat recusandae eius nesciunt illo reiciendis culpa voluptatem omnis! Sed, dolore ipsam odio necessitatibus assumenda voluptate nulla aliquam dolorem enim?
+            </p>
+            <h2>Education</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fuga nam optio iste pariatur, sunt ducimus quo velit minus animi, nisi beatae facilis reiciendis, eligendi dicta esse. Architecto, natus laudantium!</p>
+            <h2>Work and Volunteer Experience</h2>
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolor fuga iste corrupti molestiae atque deserunt quis, cupiditate ea est fugit, laboriosam commodi repellat, ad a consequatur libero rem facere!</li>
+                <li>Magnam laborum amet debitis dicta sequi inventore laudantium, aliquid rerum voluptatum, at atque suscipit labore consectetur maiores repellat ex nostrum et natus. Placeat quas autem nihil dignissimos dolorum dolores repudiandae!</li>
+                <li>Repellendus quod commodi itaque corporis ratione voluptas, vel odit repellat quidem et eos impedit, quos, quas modi praesentium expedita? Perspiciatis a hic dolorem atque doloribus voluptas alias, porro iste doloremque!</li>
+            </ul>
+            <h2>Languages</h2>
+            <ul>
+                <li>
+                    sample
+                </li>
+                <li>
+                    sample
+                </li>
+                <li>
+                    sample
+                </li>
+                <li>
+                    sample
+                </li>
+                <li>
+                    sample
+                </li>
+                <li>
+                    sample
+                </li>
+            </ul>
+            <h2>References available upon request</h2>
+        </div>
+        <div id="swap" style="text-align: center">
+            <div class="beige card skinny">
+                <h2>Ben Basten</h2>
+                <p>123 Sample Dr. <br> San Francisco, CA 94016 <br> 123.456.7890 (cell)</p>
+            </div>
+            <div class="beige card skinny">
+                <h2>Full Resume PDF</h2>
+                <img class="download" src="/img/icons/pdf icon.png" alt="pdf">
+                <p class="download"><a href="/docs/SampleResume.pdf" download>Download here</a></p>
+            </div>
+        </div>
+        <!-- <div class="beige card skinny mobileRemove">
+        <img src="img/tux.jpg" alt="portrait">
+    </div> -->
+        <div class="skinny beige card">
+            <img src="img/headshot.jpg" alt="Picture of Me">
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div id="footer">
+        <div class="column" style="border-right: 1px solid white;">
+            <h3>My Work</h3>
+            <ul>
+                <li><a href="/photo">Photos</a></li>
+                <li><a href="/video">Videos</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>About Me</h3>
+            <ul>
+                <li><a href="/about">Bio</a></li>
+                <li><a href="/myyear2018">My Year 2018</a></li>
+            </ul>
+        </div>
+        <div class="column" id="lastColumn">
+            <h3 class="mobileRemove">Get in touch</h3>
+            <ul>
+                <li><a href="/contact">Contact Form </a><span class="mobile"> • </span></li>
+                <li class="footer-social"><a href="https://instagram.com/ben.basten2" alt="Instagram: Ben Basten"
+                        target="_blank"><img src="img/icons/instagram-small-grey.png" alt="instagram"></a> </a><span
+                        class="mobile">•</span> <a href="https://www.youtube.com/channel/UC4QJKs4omKo_cDSVvPC1nEA"
+                        alt="YouTube: Ben Basten" target="_blank"><img src="img/icons/youtube-small-grey.png"
+                            alt="youtube"></a></li>
+            </ul>
+        </div>
+        <p class="inline" id="credit">Website design by Ben Basten</p>
+    </div>
+</body>
+
+</html>

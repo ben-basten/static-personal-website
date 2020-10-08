@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133163357-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-133163357-1');
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Contact | Ben Basten</title>
+    <script src="js/main.js"></script>
+    <link rel="icon" href="img/icons/icon.png">
+    <meta name="description" content="Questions? Business Inquiries? Comments? Contact Ben Basten to learn more.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="css/navigation-general.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body onload="moveElements()" onresize="moveElements()">
+    <div class="content">
+        <ul class="navigation" id="navBar">
+            <li><a id="hamburger" href="javascript:void(0)" onclick="openMenu()"><img src="img/icons/hamburger.png" alt="hamburger" id="burgerIcon"></a></li>
+            <li class="logo">
+                <a class="logo" href="/">
+                    <img src="img/icons/logo-small.png" alt="logo" onmouseover="highlightIcon(3)"
+                         onmouseout="flattenIcon()" id="personalLogo">
+                </a>
+            </li>
+            <li class="navigation"><a class="navigation" href="/photo">Photo</a></li>
+            <li class="navigation"><a class="navigation" href="/video">Video</a></li>
+            <li class="navigation"><a class="navigation" href="/about">About</a></li>
+            <li class="navigation"><a class="navigation active" href="/contact">Contact</a></li>
+            <li class="social">
+                <a class="social" href="http://instagram.com/ben.basten2" target="_blank">
+                    <img src="img/icons/instagram-small.png"
+                         alt="Instagram: ben.basten2" onmouseover="highlightIcon(1)" onmouseout="flattenIcon()" id="insta">
+                </a>
+            </li>
+            <li class="social">
+                <a class="social" href="https://www.youtube.com/channel/UC4QJKs4omKo_cDSVvPC1nEA" target="_blank">
+                    <img src="img/icons/youtube-small.png" alt="Youtube: Ben Basten" onmouseover="highlightIcon(2)"
+                         onmouseout="flattenIcon()" id="youtube">
+                </a>
+            </li>
+            <li class="social">
+                <a class="social" href="https://github.com/ben-basten" target="_blank">
+                    <img src="img/icons/github-small.png" alt="GitHub" onmouseover="highlightIcon(5)"
+                         onmouseout="flattenIcon()" id="github">
+                </a>
+            </li>
+        </ul>
+        <div class="wide beige card right mobileReveal">
+            <h1 class="head">Contact</h1>
+        </div>
+        <div id="empty"></div>
+        <div class="alert alert-success wide card right" id="success" role="alert">
+            Email sent! I will get back to you as soon as I can.
+        </div>
+        <div class="alert alert-danger wide card right" id="failure" role="alert">
+            There was an error. Please try again.
+        </div>
+        <div class="wide beige card right">
+            <h1 class="mobileRemove head">Contact</h1>
+            <p>
+                I am a photographer and web developer based out of Marquette, Michigan.
+                Please send me a message if you have any questions, feedback, business inquiries, or interest in prints! I would love to 
+                hear from you and will get back to you as soon as possible.
+            </p>
+        </div>
+        <div class="wide beige card right">
+            <form id="contactForm" action="" method="post" role="form">
+                <fieldset style="border: none;">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" id="firstName" name="firstName" class="input" required="required"><br>
+                                First Name*
+                            </td>
+                            <td>
+                                <input type="text" id="lastName" name="lastName" class="input" required="required">
+                                <br>Last Name*
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="text" id="email" name="email" class="input" required="required"><br>
+                                Email
+                                Address*
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <textarea id="message" name="message" class="input" required="required"></textarea><br>
+                                Message*
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" id="captcha">
+                                <div class="g-recaptcha" data-sitekey="6Lc-6rAUAAAAANdyqKSsZ5PqFPLtiCE0zFHHL5dP"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><button type="submit" class="button" id="btnSubmit">Submit</button></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+            function submitForm(e) {
+                e.preventDefault();
+
+                $('#btnSubmit').attr("disabled", true);
+
+                const firstName = document.querySelector('#firstName').value;
+                const lastName = document.querySelector('#lastName').value;
+                const email = document.querySelector('#email').value;
+                const message = document.querySelector('#message').value;
+                const captcha = document.querySelector('#g-recaptcha-response').value;
+
+                fetch('/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify({ firstName: firstName, lastName: lastName, email: email, message: message, captcha: captcha })
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.success == true) {
+                            document.getElementById('firstName').value = "";
+                            document.getElementById('lastName').value = "";
+                            document.getElementById('email').value = "";
+                            document.getElementById('message').value = "";
+                            grecaptcha.reset();
+                            $('#success').fadeIn('slow');
+                        } else {
+                            $('#failure').fadeIn('slow');
+                        }
+                        $('#btnSubmit').attr("disabled", false);
+                    })
+            }
+
+            $('#btnSubmit').click(function () {
+                $('#success').fadeOut('fast');
+                $('#failure').fadeOut('fast');
+            })
+        </script>
+
+        <div id="swap">
+            <div class="skinny beige card">
+                <img src="img/contactPic.jpg" alt="Portrait">
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div id="footer">
+        <div class="column" style="border-right: 1px solid white;">
+            <h3>My Work</h3>
+            <ul>
+                <li><a href="/photo">Photos</a></li>
+                <li><a href="/video">Videos</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>About Me</h3>
+            <ul>
+                <li><a href="/about">Bio</a></li>
+                <li><a href="/myyear2018">My Year 2018</a></li>
+            </ul>
+        </div>
+        <div class="column" id="lastColumn">
+            <h3 class="mobileRemove">Get in touch</h3>
+            <ul>
+                <li><a href="/contact">Contact Form </a><span class="mobile"> • </span></li>
+                <li class="footer-social"><a href="https://instagram.com/ben.basten2" alt="Instagram: Ben Basten" target="_blank"><img
+                            src="img/icons/instagram-small-grey.png" alt="instagram"></a> </a><span class="mobile">•</span> <a href="https://www.youtube.com/channel/UC4QJKs4omKo_cDSVvPC1nEA"
+                        alt="YouTube: Ben Basten" target="_blank"><img src="img/icons/youtube-small-grey.png" alt="youtube"></a></li>
+            </ul>
+        </div>
+        <p class="inline" id="credit">Website design by Ben Basten</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+/* NAVIGATION STYLING */
+
+ul.navigation{
+    position: sticky;
+    top: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-right: 1.5%;
+    overflow: hidden;
+    background-color: white;
+    z-index: 2000;
+}
+li.navigation {
+    padding: 15px 0px 15px 0px;
+    float: left;
+}
+li.social {
+    padding: 15px 0px 15px 0px;
+    float: right;
+}
+li.logo{
+    padding: 15px 0px 15px 25px;
+    float: left;
+}
+
+li.navigation a:hover, li.navigation a.active {
+    border-bottom: 2px solid #49484d;
+    
+}
+li.navigation a {
+    text-align: center;
+    color: #49484d;
+    display: block;
+    padding: 13px 15px 10px 15px;
+    margin-left: 15px;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+}
+a.social, #hamburger{
+    text-align: center;
+    display: block;
+    padding: 10px 0px 10px 0px;
+    margin-left: 15px;
+    border-bottom: 2px solid white;
+}
+a.social img {
+    width: 50%;
+}
+li.navigation a.active {
+    border-bottom: 2px solid #49484d;
+}
+#hamburger {
+    width: 40%;
+    display: none;
+    border-bottom: none;
+}
+@media screen and (max-width: 719px){
+    .social{
+        display: none;
+    }
+    a.logo img{
+        width: 100%;
+    }
+    li.logo {
+        padding: 10px 0 10px 0;
+        float: none;
+        width: 130px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    li.navigation {
+        float: none;
+        display: none;
+        padding: 0;
+    }
+    li.navigation a {
+        margin: 0;
+        padding: 2% 0% 2% 0%;
+        width: 20%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #hamburger {
+        display: block;
+        position: absolute;
+        width: 38px;
+        padding-top: 10px;
+    }
+    .navigation{
+        width: 100%;
+        top: 0;
+    }
+    ul.navigation {
+        position: fixed;
+        top: 0;
+        padding: 0;
+    }
+    body {
+        margin-top:61px;
+    }
+}
+@media screen and (max-width: 719px){
+.navigation.responsive {
+    width: 100%;
+}
+ul.navigation.responsive {
+    padding: 0;
+}
+  .navigation.responsive li.navigation{
+    float: none;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+}
+/* END NAVIGATION STYLING */
